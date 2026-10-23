@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f1eb" />
+  <title>Little Wins — Tic Tac Toe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Little Wins home">
+        <span class="brand-mark">✳</span>
+        <span>little wins<span class="brand-dot">.</span></span>
+      </a>
+      <span class="top-note"><span class="live-dot"></span> A tiny break, just for you</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span>✦</span> PAUSE. PLAY. REPEAT.</div>
+      <h1>A little fun goes<br><span>a long way.</span></h1>
+      <p class="subtitle">Take a breath, challenge a friend, and enjoy the little wins.</p>
+    </section>
+
+    <section class="game-card" aria-label="Tic tac toe game">
+      <div class="game-head">
+        <div>
+          <p class="section-kicker">THE CLASSIC GAME</p>
+          <h2>Tic Tac Toe <span class="sparkle">✦</span></h2>
+        </div>
+        <button class="icon-button" id="soundToggle" aria-pressed="false" title="Toggle sound" aria-label="Toggle sound">♫</button>
+      </div>
+
+      <div class="scoreboard" aria-label="Scoreboard">
+        <div class="player-card player-x active" id="playerXCard">
+          <span class="player-symbol x-symbol">×</span>
+          <div class="player-info"><span class="player-label">PLAYER 1</span><strong>Player X</strong></div>
+          <span class="score" id="scoreX">0</span>
+        </div>
+        <div class="score-divider">VS</div>
+        <div class="player-card player-o" id="playerOCard">
+          <span class="player-symbol o-symbol">○</span>
+          <div class="player-info"><span class="player-label">PLAYER 2</span><strong>Player O</strong></div>
+          <span class="score" id="scoreO">0</span>
+        </div>
+      </div>
+
+      <div class="status-row">
+        <span class="status-indicator"></span>
+        <p id="status" aria-live="polite">X's turn — make your move!</p>
+      </div>
+
+      <div class="board-wrap">
+        <div class="game-board" id="board" role="grid" aria-label="Tic tac toe board">
+          <button class="cell" role="gridcell" data-index="0" aria-label="Top left"></button>
+          <button class="cell" role="gridcell" data-index="1" aria-label="Top center"></button>
+          <button class="cell" role="gridcell" data-index="2" aria-label="Top right"></button>
+          <button class="cell" role="gridcell" data-index="3" aria-label="Middle left"></button>
+          <button class="cell" role="gridcell" data-index="4" aria-label="Center"></button>
+          <button class="cell" role="gridcell" data-index="5" aria-label="Middle right"></button>
+          <button class="cell" role="gridcell" data-index="6" aria-label="Bottom left"></button>
+          <button class="cell" role="gridcell" data-index="7" aria-label="Bottom center"></button>
+          <button class="cell" role="gridcell" data-index="8" aria-label="Bottom right"></button>
+        </div>
+        <span class="deco deco-one">✳</span><span class="deco deco-two">✦</span>
+      </div>
+
+      <div class="game-actions">
+        <button class="btn btn-primary" id="newGame"><span>↻</span> New round</button>
+        <button class="btn btn-secondary" id="resetScores">Reset scores</button>
+      </div>
+      <p class="helper-text">Two players. One board. Endless rematches.</p>
+    </section>
+
+    <footer><span>MADE FOR YOUR LITTLE MOMENTS</span><span>♡ &nbsp; PLAY NICE</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
